@@ -1,0 +1,6 @@
+.ProjectListPage .box {
+    border: 1px solid #333;
+    background-color: rgb(191, 230, 255);
+    padding: 1rem;
+    margin: 2rem;
+}
