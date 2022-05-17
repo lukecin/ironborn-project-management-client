@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import ProjectListPage from './pages/ProjectListPage';
 import { useEffect, useState } from "react";
+import AddProjectPage from "./pages/AddProjectPage";
 
 function App() {
   
@@ -24,7 +25,7 @@ function App() {
       <Routes>
         <Route path='/' element={<h1>Welcome</h1>} />
         <Route path='/projects' element={<ProjectListPage projects={projects} />} />
-        <Route path='/projects/create' element={<h1>Create new project</h1>} />
+        <Route path='/projects/create' element={<AddProjectPage />} />
       </Routes>
     </div>
   );
