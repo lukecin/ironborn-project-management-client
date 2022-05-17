@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "./ProjectListPage.css"
 
 
@@ -8,7 +9,8 @@ function ProjectListPage(props){
             return (
                 <div key={element._id} className="project-summary box">
                     <p>{element.title}</p>
-                    <button>More details</button>
+                    <NavLink to="/">More details</NavLink> |&nbsp;
+                    <NavLink to={`/projects/${element._id}/edit`}>Edit</NavLink>
                 </div>
             )
         });

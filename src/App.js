@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import ProjectListPage from './pages/ProjectListPage';
 import { useEffect, useState } from "react";
 import AddProjectPage from "./pages/AddProjectPage";
+import EditProjectPage from "./pages/EditProjectPage";
 
 function App() {
   
@@ -26,6 +27,7 @@ function App() {
         <Route path='/' element={<h1>Welcome</h1>} />
         <Route path='/projects' element={<ProjectListPage projects={projects} />} />
         <Route path='/projects/create' element={<AddProjectPage />} />
+        <Route path='/projects/:projectId/edit' element={<EditProjectPage projects={projects} />} />
       </Routes>
     </div>
   );
