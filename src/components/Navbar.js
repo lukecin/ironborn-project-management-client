@@ -4,7 +4,7 @@ import { AuthContext } from "../context/auth.context"
 
 function Navbar(){
 
-    const { isLoggedIn, isLoading, user } = useContext(AuthContext)
+    const { isLoggedIn, isLoading, user, logOutUser } = useContext(AuthContext)
 
     return (
         <nav>
@@ -12,7 +12,10 @@ function Navbar(){
             <NavLink to="/projects">Projects</NavLink> | 
             <NavLink to="/projects/create">New Project</NavLink> |||
             { isLoggedIn &&
-                <span>Welcome</span> 
+                <>
+                <span>Welcome, {user.email}</span> 
+                <button onClick={logOutUser}>Logout</button>
+                </>
             }
             { !isLoggedIn &&
                 <>

@@ -12,7 +12,7 @@ function LoginPage(props) {
   
   const navigate = useNavigate();
 
-  const { storeToken} = useContext(AuthContext);
+  const { storeToken, authenticateUser } = useContext(AuthContext);
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
@@ -27,7 +27,8 @@ function LoginPage(props) {
       // with the JWT string ->  response.data.authToken
         console.log('JWT token', response.data.authToken );
 
-        storeToken(jwt)
+        storeToken(jwt);
+        authenticateUser();
       
         navigate('/');                             // <== ADD      
       })
