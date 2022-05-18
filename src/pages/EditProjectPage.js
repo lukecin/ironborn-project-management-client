@@ -11,8 +11,8 @@ function EditProjectPage(props) {
 
     const projectDetails = props.projects.find( project => project._id === projectId); // get the details of the project that we're trying to edit
 
-    const [title, setTitle] = useState(projectDetails.title); // prepopulating edit fields
-    const [description, setDescription] = useState(projectDetails.description);
+    const [title, setTitle] = useState(projectDetails?.title); // prepopulating edit fields
+    const [description, setDescription] = useState(projectDetails?.description);
 
     const handleSubmit = (e) => {
         e.preventDefault();
