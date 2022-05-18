@@ -5,8 +5,10 @@ import "./ProjectListPage.css"
 
 function ProjectListPage(props){
 
+    const storedToken = localStorage.getItem('authToken')
+
     const deleteProject = (projectId) => {
-        axios.delete(`${process.env.REACT_APP_API_URL}/projects/${projectId}`)
+        axios.delete(`${process.env.REACT_APP_API_URL}/projects/${projectId}`, { headers: { Authorization: `Bearer ${storedToken}`} })
             .then(response => {
 
                 props.callBackProjectList();
